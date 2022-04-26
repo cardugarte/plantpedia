@@ -1,5 +1,5 @@
 {
-  "spaceId": "x3wnj8s68ndy",
-  "managementToken": "CFPAT-p2Bknm50fCizA6Mi6NZzWbspcfYvj3Hw3qra_appFzU",
+  "spaceId": "process.env.spaceId",
+  "managementToken": "process.env.managementToken",
   "contentFile": "./import/contentful-platzipedia.json"
 }

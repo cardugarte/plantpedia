@@ -13,11 +13,11 @@ import * as selectors from './selectors'
 export type QueryStatus = 'idle' | 'loading' | 'success' | 'error'
 
 const client = new GraphQLClient(
-  `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}`,
+  `https://graphql.contentful.com/content/v1/spaces/${process.env.spaceId}`,
   {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`,
+      Authorization: `Bearer ${process.env.contentDeliveryApi}`,
     },
   }
 )
@@ -45,7 +45,7 @@ export function getPlant(
   const extraHeaders: HeadersInit = {}
   if (isPreview) {
     // Use the preview access token for auth
-    extraHeaders['Authorization'] = `Bearer ${process.env.PREVIEW_ACCESS_TOKEN}`
+    extraHeaders['Authorization'] = `Bearer ${process.env.contentPreviuApi}`
   }
 
   return api
